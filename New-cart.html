@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RED Imagery Report Card</title>
+
+    <style>
+        :root {
+            --ri-bg-9821: #121212;
+            --ri-card-9821: #1a1a1a;
+            --ri-text-9821: #ffffff;
+            --ri-muted-9821: #666666;
+            --ri-red-9821: #e63946;
+            --ri-orange-9821: #fca311;
+            --ri-green-9821: #2a9d4d;
+        }
+
+        body {
+            background: var(--ri-bg-9821);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        /* CARD */
+        .ri-card-9821 {
+            width: 500px;
+            background: var(--ri-card-9821);
+            border-radius: 12px;
+            padding: 32px;
+            color: var(--ri-text-9821);
+            border: 1px solid #2a2a2a;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* HEADER */
+        .ri-header-9821 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .ri-brand-9821 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ri-logo-9821 {
+            width: 12px;
+            height: 12px;
+            background: var(--ri-red-9821);
+            transform: rotate(45deg);
+        }
+
+        .ri-brand-9821 h4 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .ri-badge-9821 {
+            color: var(--ri-muted-9821);
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            border: 1px solid #333;
+            padding: 4px 12px;
+            border-radius: 4px;
+        }
+
+        /* LOCATION */
+        .ri-location-9821 h4 {
+            margin: 0 0 6px;
+            font-size: 24px;
+            line-height: 1.3;
+        }
+
+        .ri-location-9821 p {
+            margin: 0;
+            color: var(--ri-muted-9821);
+            font-size: 14px;
+        }
+
+        /* DIVIDER */
+        .ri-divider-9821 {
+            border: none;
+            border-top: 1px solid #2a2a2a;
+            margin: 24px 0;
+        }
+
+        /* STATUS */
+        .ri-status-list-9821 {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .ri-status-item-9821 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .ri-label-9821 {
+            color: var(--ri-muted-9821);
+            letter-spacing: 1px;
+        }
+
+        .ri-value-9821::before {
+            content: "●";
+            margin-right: 8px;
+            font-size: 10px;
+        }
+
+        .ri-occupied-9821 {
+            color: var(--ri-red-9821);
+        }
+
+        .ri-risk-9821 {
+            color: var(--ri-orange-9821);
+        }
+
+        .ri-granted-9821 {
+            color: var(--ri-green-9821);
+        }
+
+        /* GALLERY */
+        .ri-gallery-9821 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .ri-image-9821 {
+            aspect-ratio: 4/3;
+            border-radius: 6px;
+            background-size: cover;
+            background-position: center;
+            background-color: #333;
+        }
+
+        /* FOOTER */
+        .ri-footer-9821 {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            font-size: 11px;
+            color: #555;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:600px) {
+
+            .ri-card-9821 {
+                width: 100%;
+                padding: 24px;
+            }
+
+            .ri-location-9821 h4 {
+                font-size: 20px;
+            }
+
+            .ri-gallery-9821 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="ri-card-9821">
+
+        <!-- HEADER -->
+        <div class="ri-header-9821">
+
+            <div class="ri-brand-9821">
+
+                <span class="ri-logo-9821"></span>
+
+                <h4>RED IMAGERY</h4>
+
+            </div>
+
+            <span class="ri-badge-9821">
+                FIELD REPORT
+            </span>
+
+        </div>
+
+        <!-- LOCATION -->
+        <div class="ri-location-9821">
+
+            <h4>
+                1247 Oak Ridge Blvd
+            </h4>
+
+            <p>
+                Orlando, FL 32803 · Orange County
+            </p>
+
+        </div>
+
+        <!-- DIVIDER -->
+        <hr class="ri-divider-9821">
+
+        <!-- STATUS -->
+        <div class="ri-status-list-9821">
+
+            <div class="ri-status-item-9821">
+
+                <span class="ri-label-9821">
+                    OCCUPANCY
+                </span>
+
+                <span class="ri-value-9821 ri-occupied-9821">
+                    Occupied
+                </span>
+
+            </div>
+
+            <div class="ri-status-item-9821">
+
+                <span class="ri-label-9821">
+                    CONDITION
+                </span>
+
+                <span class="ri-value-9821 ri-risk-9821">
+                    Moderate Risk
+                </span>
+
+            </div>
+
+            <div class="ri-status-item-9821">
+
+                <span class="ri-label-9821">
+                    ACCESS
+                </span>
+
+                <span class="ri-value-9821 ri-granted-9821">
+                    Exterior Granted
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- GALLERY -->
+        <div class="ri-gallery-9821">
+
+            <div class="ri-image-9821" style="background-image:url('waterfall.jpg');"></div>
+
+            <div class="ri-image-9821" style="background-image:url('pug.jpg');"></div>
+
+            <div class="ri-image-9821" style="background-image:url('street.jpg');"></div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="ri-footer-9821">
+
+            <span>
+                RI-2025-0847
+            </span>
+
+            <span>
+                Filed 01.15.2025
+            </span>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
