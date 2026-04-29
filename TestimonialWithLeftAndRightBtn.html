@@ -1,0 +1,390 @@
+<style>
+    .ts-9821-container {
+        max-width: 1440px;
+        margin: auto;
+        padding: 60px 70px;
+        overflow: hidden;
+        border: 1px solid #ddd;
+        position: relative;
+        background: #fff;
+    }
+
+    /* TRACK */
+    .ts-9821-track {
+        display: flex;
+        gap: 20px;
+        transition: transform 0.5s ease;
+    }
+
+    /* CARD */
+    .ts-9821-card {
+        flex: 0 0 320px;
+        border-radius: 12px;
+        padding: 25px;
+        background: #fff;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+        transition: 0.3s ease;
+    }
+
+    .ts-9821-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    /* STARS */
+    .ts-9821-stars {
+        color: #ff9800;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    /* TEXT */
+    .ts-9821-text {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #333;
+        margin-bottom: 10px;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* EXPANDED */
+    .ts-9821-text.expanded {
+        -webkit-line-clamp: unset;
+        overflow: visible;
+    }
+
+    /* TOGGLE */
+    .ts-9821-toggle {
+        font-size: 13px;
+        color: #0a66c2;
+        cursor: pointer;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+
+    /* USER */
+    .ts-9821-user h4 {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    /* BUTTONS */
+    .ts-9821-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 48px;
+        height: 48px;
+        border: none;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        z-index: 10;
+        font-size: 20px;
+        transition: 0.3s ease;
+    }
+
+    .ts-9821-arrow:hover {
+        transform: translateY(-50%) scale(1.08);
+    }
+
+    .ts-9821-prev {
+        left: 12px;
+    }
+
+    .ts-9821-next {
+        right: 12px;
+    }
+
+    /* DISABLED BUTTON */
+    .ts-9821-arrow.ts-9821-disabled {
+        opacity: 0.35;
+        pointer-events: none;
+        filter: blur(1px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width:768px) {
+
+        .ts-9821-container {
+            padding: 60px 20px;
+        }
+
+        .ts-9821-card {
+            flex: 0 0 260px;
+        }
+
+        .ts-9821-arrow {
+            width: 38px;
+            height: 38px;
+            font-size: 16px;
+        }
+
+        .ts-9821-prev {
+            left: 5px;
+        }
+
+        .ts-9821-next {
+            right: 5px;
+        }
+    }
+</style>
+
+<div class="ts-9821-wrapper">
+
+    <div class="ts-9821-container">
+
+        <!-- BUTTONS -->
+        <button class="ts-9821-arrow ts-9821-prev">&#10094;</button>
+        <button class="ts-9821-arrow ts-9821-next">&#10095;</button>
+
+        <!-- TRACK -->
+        <div class="ts-9821-track">
+
+            <!-- ORIGINAL -->
+            <div class="ts-9821-card">
+                <div class="ts-9821-stars">★★★★★</div>
+                <p class="ts-9821-text">
+                    "I had a HVAC problem In Queens village house .The Vent was not blowing cold air . Tech came in on
+                    time and was able to find the cause right away . He was extremely professional explaining what he
+                    was going to do to repair it. He was kind . Outstanding customer service and excellent work at a
+                    more than fair price. Highly recommend this company. Thank you Cool runnings , you save the day."
+                </p>
+                <span class="ts-9821-toggle">Show more</span>
+                <div class="ts-9821-user">
+                    <h4>Penny</h4>
+                    <!-- <span>Homeowner</span> -->
+                </div>
+            </div>
+
+            <div class="ts-9821-card">
+                <div class="ts-9821-stars">★★★★★</div>
+                <p class="ts-9821-text">
+                    "So, I had a MAJOR HVAC problem in my home (6 split systems completely not working) these guys are
+                    HEROES. Came, evaluated my problem, worked up a very reasonable quote, came back within a few days
+                    and fixed absolutely everything. They were on time, worked clean (shoe covers and all!) and stayed
+                    until the job got done! It was a full day, and these guys handled everything with a great attitude.
+                    They are extremely knowledgeable and well equipped. If I ever have a problem again, I will certainly
+                    call them. I honestly couldn’t recommend them more highly."
+                </p>
+                <span class="ts-9821-toggle">Show more</span>
+                <div class="ts-9821-user">
+                    <h4>Emma Feigenbaum</h4>
+                    <!-- <span>Restaurant Owner</span> -->
+                </div>
+            </div>
+
+            <div class="ts-9821-card">
+                <div class="ts-9821-stars">★★★★★</div>
+                <p class="ts-9821-text">
+                    "Absolutely terrific! Quick, friendly ! Looks great !"
+                </p>
+                <span class="ts-9821-toggle">Show more</span>
+                <div class="ts-9821-user">
+                    <h4>Erin Smith</h4>
+                    <!-- <span>Property Manager</span> -->
+                </div>
+            </div>
+
+            <!-- DUPLICATE (for infinite loop) -->
+            <div class="ts-9821-card">
+                <div class="ts-9821-stars">★★★★★</div>
+                <p class="ts-9821-text">
+                    "Very professional, very friendly. Got here on time, got the job done, and gave me tips for avoiding
+                    issues in the future. Would recommend!"
+                </p>
+                <span class="ts-9821-toggle">Show more</span>
+                <div class="ts-9821-user">
+                    <h4>AARON ABRAMS</h4>
+                    <!-- <span>Homeowner</span> -->
+                </div>
+            </div>
+
+            <div class="ts-9821-card">
+                <div class="ts-9821-stars">★★★★★</div>
+                <p class="ts-9821-text">
+                    "When i spoke to cool running refrigeration tech i explained what was going on with my ac unit, i
+                    felt comfortable with response so i made appointment for 3pm today he came at 3pm opened my door
+                    straight to work with this Coronavirus thats going on he enter my house with mask and boots selves,
+                    gloves (ppe)100%, service excellent, price was right, little extra things was wrong with my unit no
+                    extra charge very happy with (CRR) cool running refrigeration 👍"
+                </p>
+                <span class="ts-9821-toggle">Show more</span>
+                <div class="ts-9821-user">
+                    <h4>Carl Herndon</h4>
+                    <!-- <span>Restaurant Owner</span> -->
+                </div>
+            </div>
+
+            <div class="ts-9821-card">
+                <div class="ts-9821-stars">★★★★★</div>
+                <p class="ts-9821-text">
+                    "When my air conditioner/heating unit broke down, one of the tenants in my building suggested Cool
+                    Runnings and I find their service to be excellent. Installation was timely and within promised
+                    budget. Best of all the service is amazing. To repair one of the AC units technician came over the
+                    weekend, knew the job, and pricing was very reasonable. For my future air conditioning needs, I will
+                    rely on Cool Runnings!!!"
+                </p>
+                <span class="ts-9821-toggle">Show more</span>
+                <div class="ts-9821-user">
+                    <h4>Nehru Gaddipati</h4>
+                    <!-- <span>Property Manager</span> -->
+                </div>
+            </div>
+
+            <div class="ts-9821-card">
+                <div class="ts-9821-stars">★★★★★</div>
+                <p class="ts-9821-text">
+                    "Nigel was great to work with gave a reasonable price for the work itemized estimate everything
+                    Involved was explained clearly began work on time finished the work in a timely manner Very clean
+                    just a great job all around Would highly recommend"
+                </p>
+                <span class="ts-9821-toggle">Show more</span>
+                <div class="ts-9821-user">
+                    <h4>tony7752</h4>
+                    <!-- <span>Property Manager</span> -->
+                </div>
+            </div>
+
+            <div class="ts-9821-card">
+                <div class="ts-9821-stars">★★★★★</div>
+                <p class="ts-9821-text">
+                    "Cool runnings is a professional company that provides amazing customer service. I had a system that
+                    three other companies came in and tried to repair. Cool runnings came in and that was over a year
+                    ago and I have not had a problem since. Nigel was amazing!"
+                </p>
+                <span class="ts-9821-toggle">Show more</span>
+                <div class="ts-9821-user">
+                    <h4>Dori Rubin</h4>
+                    <!-- <span>Property Manager</span> -->
+                </div>
+            </div>
+
+            <div class="ts-9821-card">
+                <div class="ts-9821-stars">★★★★★</div>
+                <p class="ts-9821-text">
+                    "Our service person was on time and courteous and got the job done! We happy with Cool Runnings!"
+                </p>
+                <span class="ts-9821-toggle">Show more</span>
+                <div class="ts-9821-user">
+                    <h4>Sacred Vibes</h4>
+                    <!-- <span>Property Manager</span> -->
+                </div>
+            </div>
+
+            <div class="ts-9821-card">
+                <div class="ts-9821-stars">★★★★★</div>
+                <p class="ts-9821-text">
+                    "My AC was a mess and called this Company. No wonder why it is called Cool Running. Fast and
+                    efficient. Fully recommended."
+                </p>
+                <span class="ts-9821-toggle">Show more</span>
+                <div class="ts-9821-user">
+                    <h4>Ben Morillo</h4>
+                    <!-- <span>Property Manager</span> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const track = document.querySelector(".ts-9821-track");
+        const cards = document.querySelectorAll(".ts-9821-card");
+
+        const prevBtn = document.querySelector(".ts-9821-prev");
+        const nextBtn = document.querySelector(".ts-9821-next");
+
+        let currentIndex = 0;
+
+        const cardWidth = cards[0].offsetWidth + 20;
+
+        function updateSlider() {
+
+            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+
+            const visibleCards = Math.floor(
+                document.querySelector(".ts-9821-container").offsetWidth / cardWidth
+            );
+
+            const maxIndex = cards.length - visibleCards;
+
+            /* LEFT BUTTON */
+            if (currentIndex <= 0) {
+                prevBtn.classList.add("ts-9821-disabled");
+            } else {
+                prevBtn.classList.remove("ts-9821-disabled");
+            }
+
+            /* RIGHT BUTTON */
+            if (currentIndex >= maxIndex) {
+                nextBtn.classList.add("ts-9821-disabled");
+            } else {
+                nextBtn.classList.remove("ts-9821-disabled");
+            }
+        }
+
+        nextBtn.addEventListener("click", function () {
+
+            const visibleCards = Math.floor(
+                document.querySelector(".ts-9821-container").offsetWidth / cardWidth
+            );
+
+            const maxIndex = cards.length - visibleCards;
+
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                updateSlider();
+            }
+
+        });
+
+        prevBtn.addEventListener("click", function () {
+
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlider();
+            }
+
+        });
+
+        /* SHOW MORE / LESS */
+        const texts = document.querySelectorAll('.ts-9821-text');
+
+        texts.forEach(text => {
+
+            const toggle = text.nextElementSibling;
+
+            if (text.scrollHeight <= text.clientHeight) {
+                toggle.style.display = "none";
+            }
+
+            toggle.addEventListener("click", function () {
+
+                text.classList.toggle("expanded");
+
+                if (text.classList.contains("expanded")) {
+                    this.textContent = "Show less";
+                } else {
+                    this.textContent = "Show more";
+                }
+
+            });
+
+        });
+
+        updateSlider();
+
+        window.addEventListener("resize", updateSlider);
+
+    });
+</script>
